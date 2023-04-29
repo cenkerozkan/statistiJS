@@ -7,4 +7,4 @@
 
 ## How does it work ?
 Supported formats are indicated on the index page.
-![2023-03-06 13-53-04_Trim](https://user-images.githubusercontent.com/68559468/223090867-4c3ae6f2-9c31-4273-ae50-f95bfb0e52e8.gif)
+![2023-04-29 15-41-43_Trim](https://user-images.githubusercontent.com/68559468/235303224-68738a43-f884-492f-aa8b-d781b8d39295.gif)

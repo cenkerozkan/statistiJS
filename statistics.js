@@ -24,7 +24,7 @@ function calcMedian(dataset){
 
 // Quartile calculator.
 // For now, I'm not sure if it works right !!!!!
-/*function calcQuarts(dataset){
+function calcQuarts(dataset){
     // C version of statistiCs has an ability
     // to perform a basic interpolation calculation
     // but I think it is not as useful as I imagine.
@@ -32,10 +32,10 @@ function calcMedian(dataset){
     // web based version.
     let temp1 = 0.25 * (dataset.length + 1);
     let temp2 = 0.75 * (dataset.length + 1);
-    window.alert(dataset.length);
-    window.alert(dataset[Math.floor(temp1)],dataset[Math.floor(temp2)]);
-    return[dataset[temp1],dataset[temp2]];
-}*/
+    //window.alert(dataset.length);
+    //window.alert(dataset[Math.floor(temp1)],dataset[Math.floor(temp2)]);
+    return[dataset[Math.floor(temp1)],dataset[Math.floor(temp2)]];
+}
 
 // Deviation & variance calculator.
 // DOES NOT WORK FOR NOW, I'LL FIX IT LATER.
@@ -56,9 +56,9 @@ function calcDevVar(dataset,mean){
 function clearScreen(){
     document.getElementById("mean").innerHTML = "Mean:";
     document.getElementById("median").innerHTML = "Median:";
-    //document.getElementById("q1").innerHTML = "Quartile 1:";
-    //document.getElementById("q3").innerHTML = "Quartile 3:";
-    //document.getElementById("q2").innerHTML = "IQR:";
+    document.getElementById("q1").innerHTML = "Quartile 1:";
+    document.getElementById("q3").innerHTML = "Quartile 3:";
+    document.getElementById("q2").innerHTML = "IQR:";
     document.getElementById("dev").innerHTML = "Standard Dev:";
     document.getElementById("var").innerHTML = "Variance:";
     document.getElementById("size").innerHTML = "Sample count:";
@@ -86,13 +86,13 @@ function statistiJs(){
         let mean = calcMean(sample_arr);
         let median = calcMedian(sample_arr);
         let [std_dev, pop_var] = calcDevVar(sample_arr,mean);
-        //let [quart1, quart3] = calcQuarts(sample_arr);
+        let [quart1, quart3] = calcQuarts(sample_arr);
 
         document.getElementById("mean").innerHTML = "Mean: " + Math.floor(mean*100)/100;
         document.getElementById("median").innerHTML = "Median: " + median;
-        //document.getElementById("q1").innerHTML = "Quartile 1: " + quart1;
-        //document.getElementById("q3").innerHTML = "Quartile 3: " + quart3;
-        //document.getElementById("q2").innerHTML = "IQR: " + (quart3 - quart1);
+        document.getElementById("q1").innerHTML = "Quartile 1: " + quart1;
+        document.getElementById("q3").innerHTML = "Quartile 3: " + quart3;
+        document.getElementById("q2").innerHTML = "IQR: " + (quart3-quart1);
         document.getElementById("dev").innerHTML = "Standard Dev: " + Math.floor(std_dev*100)/100;
         document.getElementById("var").innerHTML = "Variance: " + Math.floor(pop_var*100)/100;
         document.getElementById("size").innerHTML = "Sample count: " + sample_arr.length;
